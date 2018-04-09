@@ -1,28 +1,27 @@
 {
-  "name": "practicaHTML",
+  "name": "FrontendAvanzadoHandsOn",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "font-awesome": "^4.7.0",
-    "http-server": "^0.11.1",
-    "node-sass": "^4.8.3",
-    "normalize.css": "^8.0.0",
-    "webpack": "^4.5.0"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CBSanta/practicaHTML.git"
+    "url": "git+https://github.com/marcosomahony/FrontendAvanzadoHandsOn.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CBSanta/practicaHTML/issues"
+    "url": "https://github.com/marcosomahony/FrontendAvanzadoHandsOn/issues"
   },
-  "homepage": "https://github.com/CBSanta/practicaHTML#readme"
+  "homepage": "https://github.com/marcosomahony/FrontendAvanzadoHandsOn#readme",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "http-server": "^0.11.1",
+    "node-sass": "^4.8.3",
+    "normalize": "^0.3.1",
+    "webpack": "^4.5.0"
+  }
 }
