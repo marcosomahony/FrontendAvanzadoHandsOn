@@ -1,15 +1,20 @@
 /* Imports */
 /* ------------------- revisar */
+@import url(../node_modules/font-awesome/css/font-awesome.min.css);
+@import url("https://fonts.googleapis.com/css?family=Coustard:900|Raleway");
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:900");
 *, *::after, *::before, *:after, *:before {
   box-sizing: border-box; }
 
-@import '../node_modules/font-awesome/css/font-awesome.min.css';
-@import url('https://fonts.googleapis.com/css?family=Coustard:900|Raleway');
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:900'); 
+@keyframes menuHover {
+  0% {
+    background-color: #888; }
+  100% {
+    background-color: #777; } }
 
 body {
   background: no-repeat center center fixed;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../assets/bg.png");
+  background-color: #eff5ff;
   background-size: cover; }
 
 .wrapper {
@@ -17,13 +22,13 @@ body {
   margin: 2rem auto; }
   @media screen and (max-width: 1024px) {
     .wrapper {
-      width: 80; } }
+      width: 80%; } }
   @media screen and (max-width: 768px) {
     .wrapper {
-      width: 90; } }
+      width: 90%; } }
   @media screen and (max-width: 480px) {
     .wrapper {
-      width: 95; } }
+      width: 95%; } }
 
 .arriba {
   display: grid;
@@ -31,25 +36,24 @@ body {
 
 /* Figuras */
 article figure {
-  margin: auto 1rem;
-  /* -------------------- seguro que es asi?*/ }
-  article figure .fig1 {
+  margin: auto 1rem; }
+  article figure.fig1 {
     width: 35%;
     float: right;
     margin-top: 0%; }
     @media screen and (max-width: 768px) {
-      article figure .fig1 {
+      article figure.fig1 {
         width: 100%;
         display: block;
         margin: 0rem;
         padding-bottom: 1rem; } }
-  article figure .fig2 {
+  article figure.fig2 {
     width: 40%;
     float: left;
     margin-top: 0%;
     margin-left: 0rem; }
     @media screen and (max-width: 768px) {
-      article figure .fig2 {
+      article figure.fig2 {
         width: 100%;
         display: block;
         margin: 0rem;
@@ -104,7 +108,16 @@ aside {
   float: right;
   width: 25%;
   font-size: 0.9rem;
-  margin: 0.5rem; }
+  margin: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #b7d2ff; }
+  @media screen and (max-width: 768px) {
+    aside {
+      padding: 0rem;
+      float: none;
+      width: 100%;
+      margin: 1rem 0rem;
+      padding: 1rem 0rem; } }
   @media screen and (max-width: 768px) {
     aside p {
       margin: 0rem 1rem; } }
@@ -164,15 +177,15 @@ footer {
   text-decoration: none;
   text-transform: capitalize; }
   .menu li a:not(.active):hover {
-    background-color: #777;
-    border-radius: 4px; }
-  .menu li a .active {
+    border-radius: 4px;
+    animation: menuHover .5s forwards; }
+  .menu li a.active {
     background-color: #444444;
     color: #e6e6e6;
     border-radius: 4px; }
 
 @media screen and (max-width: 480px) {
-  .menu .esconder {
+  .menu.esconder {
     display: none; } }
 
 /* Navbar Replegada */
@@ -184,7 +197,7 @@ footer {
   @media screen and (max-width: 480px) {
     .replegado {
       display: block; } }
-  .replegado .opcionesRep {
+  .replegado.opcionesRep {
     display: none; }
 
 li img {
@@ -192,30 +205,30 @@ li img {
   height: 25px; }
 
 /*Imagenes*/
-div .autores {
+div.autores {
   display: flex;
   justify-content: space-between;
   font-family: 'Raleway', serif;
   margin: 0 3%; }
   @media screen and (max-width: 1024px) {
-    div .autores {
+    div.autores {
       display: block;
       margin: 0; } }
 
-div .persona {
+div.persona {
   max-width: 12.5rem;
   display: inline-block;
   overflow: hidden;
   box-sizing: border-box;
   margin: 1rem .1rem 1rem; }
   @media screen and (max-width: 1024px) {
-    div .persona {
+    div.persona {
       max-width: 100%;
       width: 100%;
       margin: 0;
       margin-top: 1rem; } }
 
-div .nombre {
+div.nombre {
   margin: auto;
   box-sizing: border-box;
   font-size: 1.45rem;
@@ -227,7 +240,7 @@ div .nombre {
   color: #f1fdfc;
   text-align: center; }
 
-div .role {
+div.role {
   margin: auto;
   box-sizing: border-box;
   font-size: 1.25rem;
@@ -238,7 +251,7 @@ div .role {
   margin: 0 0 .35rem;
   text-align: center; }
 
-div .foto {
+div.foto {
   margin: 0.5rem auto;
   text-align: center;
   background-color: #f0fbff;
@@ -249,13 +262,13 @@ div .foto {
   height: auto;
   border-radius: 100%;
   overflow: hidden; }
-  div .foto img {
+  div.foto img {
     position: relative;
     top: -10%;
     width: 100%;
     height: 100%; }
 
-div .datos {
+div.datos {
   padding: .6rem;
   font-size: .95rem;
   width: 100%;
@@ -301,7 +314,7 @@ fieldset {
   margin-bottom: 1rem; }
   fieldset legend {
     font-size: 1.25rem; }
-  fieldset div .validate {
+  fieldset div.validate {
     color: #f13737;
     margin-left: 2rem; }
 
