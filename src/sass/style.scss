@@ -201,27 +201,9 @@ aside {
 
 /*Video*/
 
-/* iframe {
-    width: 100%;
-    height: 600px;
-    margin-right: 0.5rem;
-
-    @media screen and (max-width: 1024px) {
-        height: 400px;
-    }
-
-    @media screen and (max-width:768px) {
-        height: 350px;
-    }
-
-    @media screen and (max-width:480px) {
-        height: 200px;
-    }
-} */
-
 .wrapper_video {
-  height:240px;
-  width:360px;
+  height:360px;
+  width:480px;
   position:relative;
   left:0;
   right:0;
@@ -246,6 +228,7 @@ aside {
       width:100%;
       position:absolute;
       left:0;
+      opacity: 0.75;
       bottom:0;
       background:rgba(6,6,6,.8);
       z-index:2147483648; // Override z-index of the original controls
@@ -290,6 +273,48 @@ aside {
     }
   }
 }
+
+// eliminar estilo predeterminado
+  input[type=range] {
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  // eliminar outline al clickar
+  input[type=range]:focus {
+    outline: none;
+  }
+   
+  // estilo barra progreso
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1px;
+    cursor: pointer;
+    animate: .2s;
+    box-shadow: 0 0 0 #000, 0 0 0 #000;
+    background: #aaa;
+    border-radius: 25px;
+    border: 0px solid #000101;
+  }
+   
+  // estilo bola sobre la barra de progreso
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0 0 0 #000, 0 0 0 #000;
+    border: 0px solid #000000;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #bbb;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -6px;
+  }
+   
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #aaa;
+  }
+   
 
 /*Footer*/
 
