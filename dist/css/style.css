@@ -5,10 +5,16 @@
   box-sizing: border-box; }
 
 @keyframes menuHover {
-  0% { }
+  0% {
+    border-bottom: 0px solid #666; }
   100% {
     background-color: #777;
     border-bottom: 5px solid #666; } }
+
+@keyframes activeHover {
+  0% { }
+  100% {
+    border-bottom: 5px solid white; } }
 
 body {
   background: no-repeat center center fixed;
@@ -254,6 +260,8 @@ footer {
     color: #e6e6e6;
     border-radius: 5px;
     border-bottom: 5px solid black; }
+    .menu li a.active:hover {
+      animation: activeHover .5s forwards; }
 
 @media screen and (max-width: 480px) {
   .menu .esconder {
