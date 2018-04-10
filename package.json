@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js",
-    "sass" : "node-sass -o ./dist/css ./src/sass",
+    "sass": "node-sass -o ./dist/css ./src/sass",
     "start": "webpack-dev-server"
   },
   "repository": {
