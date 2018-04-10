@@ -62,4 +62,4 @@ api_key.js
 
 # compiled js and css (use npm run build)
 dist/*.js
-dist/*.css
+dist/css/
