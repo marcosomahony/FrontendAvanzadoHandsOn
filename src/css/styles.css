@@ -1,5 +1,5 @@
-@import "../node_modules/normalize.css/normalize.css";
-@import "../node_modules/font-awesome/css/font-awesome.min.css";
+@import "../../node_modules/normalize.css/normalize.css";
+@import "../../node_modules/font-awesome/css/font-awesome.min.css";
 @import url('https://fonts.googleapis.com/css?family=Coustard:900|Raleway');
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:900');
 
@@ -99,11 +99,180 @@ aside {
 
 /*Video*/
 
-iframe {
-    width: 100%;
-    height: 500px;
-    margin-right: 0.5rem;
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
 }
+ 
+input[type=range]:focus {
+  outline: none;
+}
+ 
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  animate: .2s;
+  box-shadow: 0 0 0 #000, 0 0 0 #000;
+  background: #aaa;
+  border-radius: 25px;
+  border: 0px solid #000101;
+}
+ 
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0 0 0 #000, 0 0 0 #000;
+  border: 0px solid #000000;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #bbb;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -6px;
+}
+ 
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #aaa;
+}
+ 
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0 0 0 #000, 0 0 0 #000;
+  background: #aaa;
+  border-radius: 25px;
+  border: 0px solid #000101;
+}
+ 
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0 0 0 #000, 0 0 0 #000;
+  border: 0px solid #000000;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #bbb;
+  cursor: pointer;
+}
+ 
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 10px 0;
+  color: transparent;
+}
+ 
+input[type=range]::-ms-fill-lower {
+  background: #aaa;
+  border: 0.5px #aaa solid;
+  border-radius: 50px;
+  box-shadow: 0 0 0 #000, 0 0 0 #000;
+}
+ 
+input[type=range]::-ms-fill-upper {
+  background: #aaa;
+  border: 0.5px #aaa solid;
+  border-radius: 50px;
+  box-shadow: 0 0 0 #000, 0 0 0 #000;
+}
+ 
+input[type=range]::-ms-thumb {
+  box-shadow: 0 0 0 #000, 0 0 0 #000;
+  border: 0px solid #000000;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #bbb;
+  cursor: pointer;
+}
+ 
+input[type=range]:focus::-ms-fill-lower {
+  background: #aaa;
+}
+ 
+input[type=range]:focus::-ms-fill-upper {
+  background: #aaa;
+}
+ 
+body {
+  padding: 30px;
+}
+ 
+.wrapper_video {
+  height: 240px;
+  width: 360px;
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.wrapper_video .video {
+  height: 100%;
+  max-height: 720px;
+  width: 100%;
+  max-width: 1280px;
+  background-color: #111;
+}
+.wrapper_video .video video {
+  height: 100%;
+  width: 100%;
+}
+.wrapper_video .video video::-webkit-media-controls-enclosure, .wrapper .video video::-webkit-media-controls {
+  display: none !important;
+}
+.wrapper_video .video .controls {
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: rgba(6, 6, 6, 0.8);
+  z-index: 2147483648;
+}
+.wrapper_video .video .controls .playpause,
+.wrapper_video .video .controls .volume,
+.wrapper_video .video .controls .fullscreen {
+  width: 48px;
+  padding: 12px 0;
+  color: #D6D6D6;
+  font-size: 16px;
+  text-align: center;
+}
+.wrapper_video .video .controls .progress {
+  width: calc(100% - 208px);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 54px;
+  margin: auto;
+  background: transparent;
+}
+.wrapper_video .video .controls .volume {
+  position: absolute;
+  right: 96px;
+}
+.wrapper_video .video .controls .volume input {
+  background: transparent;
+  width: 48px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 44px;
+  margin: auto;
+}
+.wrapper_video .video .controls .fullscreen {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 
 /*Footer*/
 
@@ -397,3 +566,30 @@ h1 img {
         height: 200px;
     }
 }
+
+
+
+#reproductor{
+    width: 720px;
+    margin: 20px auto;
+    padding: 5px;
+    background: #999999;
+    border: 1px solid #666666;
+    border-radius: 10px;}
+#botones{
+    float: left;
+    width: 99px;
+    height: 20px;}
+#barra{
+    position: relative;
+    float: left;
+    width: 600px;
+    height: 16px;
+    padding: 2px;
+    border: 1px solid #CCCCCC;
+    background: #EEEEEE;}
+#progreso{
+    position: absolute;
+    width: 0px;
+        height: 16px;
+        background: rgba(0,0,150,.2);}
