@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js",
-    "sass": "node-sass -o ./dist/css ./src/sass",
+    "build_js": "webpack --config webpack.config.js",
+    "build_sass": "node-sass -o ./dist/css ./src/sass",
+    "build": "parallelshell \"npm run build_js\" \"npm run build_sass\"",
     "start": "webpack-dev-server"
   },
   "repository": {
@@ -26,6 +27,7 @@
     "http-server": "^0.11.1",
     "node-sass": "^4.8.3",
     "normalize": "^0.3.1",
+    "parallelshell": "^3.0.2",
     "webpack": "^4.5.0",
     "webpack-dev-server": "^3.1.3"
   },
