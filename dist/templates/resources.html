@@ -1,0 +1,26 @@
+<template id="resources">
+    <input id="btnVIds" type="button" value="Buscar videos" onclick="asdf()">
+    <span class="worker_out"></span>
+</template>
+
+<script type="text/javascript">
+    function asdf() {
+        var worker = new Worker("./ytworker.js")
+        var out = document.querySelector("span.worker_out");
+        let vids = "";
+        worker.onmessage = function (oEvent) {
+            vids += videoToSpan(oEvent.data);
+            out.innerHTML = vids;
+        };
+    }
+
+    function videoToSpan(video) {
+        var out = ('<div class="vidFrame">');
+        out += ('<img class="vidImg" src="' + video.img + '" style="float: left;">');
+        out += ('<p class="vidTitle">' + video.title + '</p>');
+        out += ('<p class="vidChannel">' + video.channel + '</p>');
+        out += ('<p class="vidDescription">' + video.description + '</p>');
+        out += ('</div>');
+        return out;
+    }
+</script>
