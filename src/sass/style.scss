@@ -6,6 +6,11 @@
 $color_title: rgb(82, 82, 82);
 $color_content: rgb(240, 251, 255);
 $color_title_text: rgb(241, 253, 252);
+$grey:#D6D6D6;
+$screen_bigTablet: 1024px;
+$screen_tablet: 768px;
+$screen_phone: 480px;
+
 
 @keyframes menuHover {
     0% {
@@ -37,15 +42,15 @@ body {
     width: 60%;
     margin: 2rem auto;
 
-    @media screen and (max-width: 1024px){
+    @media screen and (max-width: $screen_bigTablet){
         width: 80%;
     }
 
-    @media screen and (max-width:768px) {
+    @media screen and (max-width: $screen_tablet) {
         width: 90%;
     }
 
-    @media screen and (max-width:480px) {
+    @media screen and (max-width: $screen_phone) {
         width: 95%;
     }
 }
@@ -66,7 +71,7 @@ article {
             float: right;
             margin-top: 0%;
 
-            @media screen and (max-width:768px) {
+            @media screen and (max-width: $screen_tablet) {
                 width: 100%;
                 display: block;
                 margin: 0rem;
@@ -80,7 +85,7 @@ article {
             margin-top: 0%;
             margin-left: 0rem;
 
-            @media screen and (max-width:768px) {
+            @media screen and (max-width: $screen_tablet) {
                 width: 100%;
                 display: block;
                 margin: 0rem;
@@ -107,7 +112,7 @@ header {
         margin-bottom: 0rem;
         font-size: 2.5rem;
 
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: $screen_bigTablet) {
             font-size: 2rem;
         }
 
@@ -122,7 +127,7 @@ header {
         font-weight: 800;
         margin-top: 0.5rem;
 
-        @media screen and (max-width:480px) {
+        @media screen and (max-width: $screen_phone) {
             display: none;
         }
     }
@@ -145,7 +150,7 @@ article {
             font-weight: 600;
         }
 
-        @media screen and (max-width:768px) {
+        @media screen and (max-width: $screen_tablet) {
             width: 100%;
         }
     }
@@ -173,7 +178,7 @@ aside {
     border-radius: 4px;
     border: 1px solid #b7d2ff;
 
-    @media screen and (max-width:768px) {
+    @media screen and (max-width: $screen_tablet) {
         padding: 0rem;
         float: none;
         width: 100%;
@@ -182,13 +187,13 @@ aside {
     }
 
     p {
-        @media screen and (max-width:768px) {
+        @media screen and (max-width: $screen_tablet) {
             margin: 0rem 1rem;
         }
     }
 
     h2 {
-        @media screen and (max-width:768px) {
+        @media screen and (max-width: $screen_tablet) {
             margin: 0rem 1rem;
         }
     }
@@ -214,7 +219,7 @@ aside {
     }
 } */
 
-$grey:#D6D6D6;
+
 
 .wrapper_video {
   height:240px;
@@ -335,11 +340,11 @@ footer {
             @extend %ul-before-after-shared;
         }
 
-        @media screen and (max-width:768px) {
+        @media screen and (max-width: $screen_tablet) {
             grid-template-columns: 5% 1fr 1fr 1fr 1fr 1fr 5%;
         }
 
-        @media screen and (max-width:480px) {
+        @media screen and (max-width: $screen_phone) {
             display: block;
         }
     }
@@ -372,7 +377,7 @@ footer {
     } 
 
     .esconder {
-        @media screen and (max-width:480px) {
+        @media screen and (max-width: $screen_phone) {
             display: none;
         }
     }
@@ -386,7 +391,7 @@ footer {
     padding-left: 1rem;
     list-style: none;
 
-    @media screen and (max-width:480px) {
+    @media screen and (max-width: $screen_phone) {
         display: block;
     }
 
@@ -411,7 +416,7 @@ div {
         font-family: 'Raleway', serif;
         margin: 0 3%;
 
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: $screen_bigTablet) {
             display: block;
             margin: 0;
         }
@@ -424,7 +429,7 @@ div {
         box-sizing: border-box;
         margin: 1rem .1rem 1rem;
 
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: $screen_bigTablet) {
             max-width: 100%;
             width: 100%;
             margin: 0;
