@@ -50,6 +50,13 @@ article {
             width: 35%;
             float: right;
             margin-top: 0%;
+
+            @media screen and (max-width:768px) {
+                width: 100%;
+                display: block;
+                margin: 0rem;
+                padding-bottom: 1rem;
+            }
         }
 
         .fig2 {
@@ -57,6 +64,13 @@ article {
             float: left;
             margin-top: 0%;
             margin-left: 0rem;
+
+            @media screen and (max-width:768px) {
+                width: 100%;
+                display: block;
+                margin: 0rem;
+                padding-bottom: 1rem;
+            }
         }
     }
 }
@@ -92,6 +106,10 @@ header {
         font-family: 'Raleway', serif;
         font-weight: 800;
         margin-top: 0.5rem;
+
+        @media screen and (max-width:480px) {
+            display: none;
+        }
     }
 }
 
@@ -110,6 +128,10 @@ article {
 
         span {
             font-weight: 600;
+        }
+
+        @media screen and (max-width:768px) {
+            width: 100%;
         }
     }
 
@@ -206,6 +228,14 @@ footer {
         &:after {
             @extend %ul-before-after-shared;
         }
+
+        @media screen and (max-width:768px) {
+            grid-template-columns: 5% 1fr 1fr 1fr 1fr 1fr 5%;
+        }
+
+        @media screen and (max-width:480px) {
+            display: block;
+        }
     }
 
     li {
@@ -229,6 +259,12 @@ footer {
             }
         }
     } 
+
+    .esconder {
+        @media screen and (max-width:480px) {
+            display: none;
+        }
+    }
 }
 
 /* Navbar Replegada */
@@ -431,62 +467,4 @@ fieldset {
 
 .oculto {
     display: none;
-}
-
-/* Responsive */
-
-
-
-@media screen and (max-width:768px) {
-    /*tablet*/
-    /*HOME*/
-
-    article {
-        p {
-            width: 100%;
-        }
-
-        figure {
-            .fig1 {
-                width: 100%;
-                display: block;
-                margin: 0rem;
-                padding-bottom: 1rem;
-            }
-
-            .fig2 {
-                width: 100%;
-                display: block;
-                margin: 0rem;
-                padding-bottom: 1rem;
-            }
-        }
-    }
-
-    nav {
-        ul {
-            grid-template-columns: 5% 1fr 1fr 1fr 1fr 1fr 5%;
-        }
-    }
-}
-
-@media screen and (max-width:480px) {
-    /*movil*/
-    /*HOME*/
-
-    .menu {
-        ul {
-            display: block;
-        }
-
-        .esconder {
-            display: none;
-        }
-    }
-
-    header {
-        p {
-            display: none;
-        }
-    }
 }
