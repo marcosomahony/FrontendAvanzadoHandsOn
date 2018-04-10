@@ -1,19 +1,25 @@
-/* Imports */
-/* ------------------- revisar */
 @import 'reset';
 @import '../../node_modules/font-awesome/css/font-awesome.min.css';
 @import url('https://fonts.googleapis.com/css?family=Coustard:900|Raleway');
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:900');
 
-
 $color_title: rgb(82, 82, 82);
 $color_content: rgb(240, 251, 255);
 $color_title_text: rgb(241, 253, 252);
 
+@keyframes menuHover {
+    0% {
+    }
+
+    100% {
+        background-color: #777;
+        border-bottom: 5px solid #666;
+    }
+}
 
 body {
     background: no-repeat center center fixed;
-    background-image: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url("../assets/bg.png");
+    background-color: #eff5ff;
     background-size: cover;
 }
 
@@ -22,15 +28,15 @@ body {
     margin: 2rem auto;
 
     @media screen and (max-width: 1024px){
-        width: 80;
+        width: 80%;
     }
 
     @media screen and (max-width:768px) {
-        width: 90;
+        width: 90%;
     }
 
     @media screen and (max-width:480px) {
-        width: 95;
+        width: 95%;
     }
 }
 
@@ -45,8 +51,7 @@ article {
     figure {
         margin: auto 1rem;
 
-        /* -------------------- seguro que es asi?*/
-        .fig1 {
+        &.fig1 {
             width: 35%;
             float: right;
             margin-top: 0%;
@@ -59,7 +64,7 @@ article {
             }
         }
 
-        .fig2 {
+        &.fig2 {
             width: 40%;
             float: left;
             margin-top: 0%;
@@ -155,6 +160,16 @@ aside {
     width: 25%;
     font-size: 0.9rem;
     margin: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #b7d2ff;
+
+    @media screen and (max-width:768px) {
+        padding: 0rem;
+        float: none;
+        width: 100%;
+        margin: 1rem 0rem;
+        padding: 1rem 0rem;
+    }
 
     p {
         @media screen and (max-width:768px) {
@@ -329,14 +344,15 @@ footer {
             text-transform: capitalize;
 
             &:not(.active):hover {
-                background-color: #777;
                 border-radius: 4px;
+                animation: menuHover .5s forwards;
             }
 
-            .active {
+            &.active {
                 background-color: rgb(68, 68, 68);
                 color: rgb(230, 230, 230);
-                border-radius: 4px;
+                border-radius: 5px;
+                border-bottom: 5px solid black;
             }
         }
     } 
@@ -360,7 +376,7 @@ footer {
         display: block;
     }
 
-    .opcionesRep {
+    &.opcionesRep {
         display: none;
     }
 }
@@ -375,7 +391,7 @@ li {
 /*Imagenes*/
 
 div {
-    .autores {
+    &.autores {
         display: flex;
         justify-content: space-between;
         font-family: 'Raleway', serif;
@@ -387,7 +403,7 @@ div {
         }
     }
 
-    .persona {
+    &.persona {
         max-width: 12.5rem;
         display: inline-block;
         overflow: hidden;
@@ -402,7 +418,7 @@ div {
         }
     }
 
-    .nombre {
+    &.nombre {
         margin: auto;
         box-sizing: border-box;
         font-size: 1.45rem;
@@ -415,7 +431,7 @@ div {
         text-align: center;
     }
 
-    .role {
+    &.role {
         margin: auto;
         box-sizing: border-box;
         font-size: 1.25rem;
@@ -427,7 +443,7 @@ div {
         text-align: center;
     }
 
-    .foto {
+    &.foto {
         margin: 0.5rem auto;
         text-align: center;
         background-color: $color_content;
@@ -447,7 +463,7 @@ div {
         }
     }
 
-    .datos {
+    &.datos {
         padding: .6rem;
         font-size: .95rem;
         width: 100%;
@@ -484,7 +500,6 @@ div {
     margin-right: 3px;
     font-family: inherit;
 
-    /* ---------------------peligroooo */
     &:hover {
         background-color: #888;
     }
@@ -530,7 +545,7 @@ fieldset {
     }
 
     div {
-        .validate {
+        &.validate {
         color: rgb(241, 55, 55);
         margin-left: 2rem;
         }
@@ -543,8 +558,6 @@ fieldset {
     width: 100%;
     font-family: 'Raleway', serif;
 }
-
-/* a saber */
 
 .oculto {
     display: none;
