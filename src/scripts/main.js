@@ -66,8 +66,18 @@ export class Main {
             fullscreen = document.querySelector('.fullscreen'),
             updateProgress;
 
-        if (playPause != null) {
+        if (playPause != null && video!=null) {
             playPause.addEventListener('click', function () {
+                if (playPause.className == 'playpause pause fa fa-play') {
+                    playPause.className = 'playpause play fa fa-pause';
+                    video.play();
+                } else {
+                    playPause.className = 'playpause pause fa fa-play';
+                    video.pause();
+                }
+            });
+
+            video.addEventListener('click', function () {
                 if (playPause.className == 'playpause pause fa fa-play') {
                     playPause.className = 'playpause play fa fa-pause';
                     video.play();
