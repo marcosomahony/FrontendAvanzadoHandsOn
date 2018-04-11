@@ -48,6 +48,9 @@ export class Main {
         if (document.querySelector('.wrapper_video')) {
             this.cargarVideoPlayer();
         }
+        if (document.querySelector('.worker_out')) {
+            this.cargarVideos();
+        }
     }
 
     highlightSelected(id) {
@@ -131,6 +134,26 @@ export class Main {
                 updateProgress = null;
                 video.currentTime = progress.value / 10
             });
+        }
+    }
+
+    cargarVideos() {
+        var worker = new Worker("./ytworker.js")
+        var out = document.querySelector("span.worker_out");
+        let vids = "";
+        worker.onmessage = function (oEvent) {
+            vids += _videoToSpan(oEvent.data);
+            out.innerHTML = vids;
+        };
+        
+        function _videoToSpan(video) {
+            var out = ('<div class="vidFrame">');
+            out += ('<img class="vidImg" src="' + video.img + '" style="float: left;">');
+            out += ('<p class="vidTitle">' + video.title + '</p>');
+            out += ('<p class="vidChannel">' + video.channel + '</p>');
+            out += ('<p class="vidDescription">' + video.description + '</p>');
+            out += ('</div>');
+            return out;
         }
     }
 }
