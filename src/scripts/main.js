@@ -147,12 +147,13 @@ export class Main {
         };
         
         function _videoToSpan(video) {
-            var out = ('<div class="vidFrame">');
+            var out = ('<div class="vidWrapper"><div class="vidFrame">');
             out += ('<img class="vidImg" src="' + video.img + '" style="float: left;">');
             out += ('<p class="vidTitle">' + video.title + '</p>');
+            out += ('<input class="vidButton" type="button" value="Ver en YouTube" onclick="location.href=\'' + video.link + '\'">');
             out += ('<p class="vidChannel">' + video.channel + '</p>');
             out += ('<p class="vidDescription">' + video.description + '</p>');
-            out += ('</div>');
+            out += ('</div></div>');
             return out;
         }
     }
